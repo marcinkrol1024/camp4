@@ -4,25 +4,24 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 public class Shop implements Serializable {
   private final List<Integer> prices;
-  private transient Optional<Integer> cachedSum = Optional.empty();
+  private transient Integer cachedSum;
 
   public Shop(List<Integer> prices) {
     this.prices = new ArrayList<>(prices);
   }
 
   int getSumOfPrices() {
-    if (!cachedSum.isPresent()) {
+    if (cachedSum == null) {
       int sum = 0;
       for (Integer price : prices) {
         sum += price;
       }
-      cachedSum = Optional.of(sum);
+      cachedSum = sum;
     }
-    return cachedSum.get();
+    return cachedSum;
   }
 
   @Override

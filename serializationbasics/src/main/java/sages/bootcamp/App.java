@@ -15,10 +15,16 @@ public class App {
 
     // sprawdzam, czy uda się odczytać
     loadBuildings();
+
+    // shop
+    saveShop();
+    loadShop();
   }
 
   private static void saveShop() throws IOException {
     Shop shop = new Shop(Arrays.asList(1, 2, 3));
+    shop.getSumOfPrices();
+    System.out.println(shop);
 
     try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("shop.bin"))) {
       outputStream.writeObject(shop);
@@ -27,7 +33,7 @@ public class App {
 
   private static void loadShop() throws IOException, ClassNotFoundException {
     try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("shop.bin"))) {
-      List<Shop> shops = (List<Shop>) inputStream.readObject();
+      Shop shops = (Shop) inputStream.readObject();
       System.out.println(shops);
     }
   }
