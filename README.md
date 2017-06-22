@@ -15,6 +15,7 @@ TASK 3 - serialization basics
 ------
 
 Create list of users, save to users.bin, then read and write out to console
+Create test to check if read users are equal to written users
 
 User - class
 * name: String
