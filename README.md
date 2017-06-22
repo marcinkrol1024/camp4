@@ -8,6 +8,5 @@ TASK 2
 ------
 
 TimeDisplay
-* getDayOfWeek
-* getSeconds
-* getMonth
+* getDayOfWeek - name of week
+* getMonth - name of month
