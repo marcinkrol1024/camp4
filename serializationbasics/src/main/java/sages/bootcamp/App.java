@@ -17,6 +17,21 @@ public class App {
     loadBuildings();
   }
 
+  private static void saveShop() throws IOException {
+    Shop shop = new Shop(Arrays.asList(1, 2, 3));
+
+    try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("shop.bin"))) {
+      outputStream.writeObject(shop);
+    }
+  }
+
+  private static void loadShop() throws IOException, ClassNotFoundException {
+    try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("shop.bin"))) {
+      List<Shop> shops = (List<Shop>) inputStream.readObject();
+      System.out.println(shops);
+    }
+  }
+
   private static void saveBuildings() throws IOException {
     List<Building> buildings = Arrays.asList(
         new Building(10, "ul. Hoża 15"),
