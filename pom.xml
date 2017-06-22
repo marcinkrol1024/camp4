@@ -12,6 +12,7 @@
     <modules>
         <module>productdiscount</module>
         <module>timedisplay</module>
+        <module>serializationbasics</module>
     </modules>
 
     <properties>
