@@ -23,3 +23,16 @@ User - class
 * credentials: Credentials - class
   * username: String
   * password: String
+  
+TASK 4 - serialization with transient
+------
+
+Create building, serialize and deserialize<br>
+All inhabitants count should be cached after first execution<br>
+Cached values should be transient<br>
+Create test for get all inhabitants count<br>
+Create test to check if cache gets serialized<br>
+
+Building - class
+* apartmentInhabitantsCounts: List\<Integer>
+* getAllInhabitantsCount: int
