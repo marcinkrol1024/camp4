@@ -12,6 +12,7 @@ public class Shop {
   }
 
   // discountedProductPrice = productPrice - currentDiscount
+  // LocalDate.now().getDayOfWeek();
   int getDiscountedProductPrice(String product) {
     throw new UnsupportedOperationException("Not implemented"); // todo implement
   }
